@@ -29,6 +29,10 @@ function detect() {
             browserVersion = navUserAgent.substring(tempVersionOffset + 8);
         }
     } 
+    else if((tempVersionOffset = navUserAgent.indexOf('OPR')) !== -1) {
+        browserName = 'Opera';
+        browserVersion = navUserAgent.substring(tempVersionOffset + 4);
+    } 
     else if((tempVersionOffset = navUserAgent.indexOf('MSIE')) !== -1) {
         browserName = 'IE';
         browserVersion = navUserAgent.substring(tempVersionOffset + 5);
