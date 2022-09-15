@@ -8,7 +8,6 @@
 <body onload="init()">
     
 <script type="text/javascript">
-    
 function init() {
     var browser = detect();
 
@@ -52,6 +51,11 @@ function detect() {
         if((tempVersionOffset = navUserAgent.indexOf('Version')) !== -1) {
             browserVersion = navUserAgent.substring(tempVersionOffset + 8);
         }
+
+        if((navUserAgent.indexOf('iPad') !== -1 || navUserAgent.indexOf('iPhone') !== -1) && (tempVersionOffset = navUserAgent.indexOf('CriOS')) !== -1) {
+            browserName = 'ChromeIOS';
+            browserVersion = navUserAgent.substring(tempVersionOffset + 6);
+        }
     } 
     else if((tempVersionOffset = navUserAgent.indexOf('Firefox')) !== -1) {
         browserName = 'Firefox';
@@ -81,7 +85,6 @@ function detect() {
         majorVersion: parseInt(browserVersion, 10),
     };
 }
-    
 </script>
     
 <div id="result"></div>
