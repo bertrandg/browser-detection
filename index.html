@@ -8,6 +8,7 @@
 <body onload="init()">
     
 <script type="text/javascript">
+    
 function init() {
     var browser = detect();
 
@@ -31,6 +32,10 @@ function detect() {
     else if((tempVersionOffset = navUserAgent.indexOf('MSIE')) !== -1) {
         browserName = 'IE';
         browserVersion = navUserAgent.substring(tempVersionOffset + 5);
+    } 
+    else if((tempVersionOffset = navUserAgent.indexOf('Trident/7.0;')) !== -1) {
+        browserName = 'IE';
+        browserVersion = '11.0';
     } 
     else if((tempVersionOffset = navUserAgent.indexOf('Chrome')) !== -1) {
         browserName = 'Chrome';
