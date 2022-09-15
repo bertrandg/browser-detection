@@ -49,7 +49,7 @@ function detect() {
     if ((tempVersion=browserVersion.indexOf(" "))!=-1)
        browserVersion=browserVersion.substring(0,tempVersion);
 
-    var result = "BrowserName = " + browserName + "\n" + "Version = " + browserVersion;
+    var result = "BrowserName = " + browserName + "\n" + "Version = " + browserVersion + "\n\nUserAgent = " + navUserAgent;
     document.querySelector('#result').innerText = result;
 }
 
